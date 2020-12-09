@@ -1,5 +1,9 @@
 package Presentacion;
 
+import ConectarBaseDatos.Conectar;
+import java.sql.Connection;
+
+
 import javax.swing.JOptionPane;
 
 public class AccesoLogin extends javax.swing.JFrame {
@@ -9,26 +13,19 @@ public class AccesoLogin extends javax.swing.JFrame {
 
     }
 
-    public void IngresarSistema(String Usuario, String Password) {
-        String capturar = "";
-        String sql = "SELECT * FROM usuarios where usuario ='" + Usuario + "' && password='" + Password + "'";
-        try {
-            Statament st = connect.createStatament();
-            ResultSet result = st.excuteQuery(sql);
-            
-            while (result.next()){
-                capturar = result.getString("tipo_usuario");
-            
-            }
-            if (capturar.equals("Administrador")){
-                
-            
-            }
-        } catch (Exception e) {
+    /*public void IngresarSistema() {
+        String Usuario = "admin";
+        String Password = "123";
+
+        String Pass = new String(txtPassword.getPassword());
+        if (txtUsuario.getText().equals(Usuario) && Pass.equals(Password)) {
+            VentanaPrincipal vp = new VentanaPrincipal();
+            vp.setVisible(true);
+            dispose();
 
         }
 
-    }
+    }*/
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -58,7 +55,11 @@ public class AccesoLogin extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("PASSWORD:");
 
-        txtUsuario.setText("escribir >V");
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
 
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,6 +166,20 @@ public class AccesoLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        String Usuario = "rjm";
+        String Password = "123";
+
+        String Pass = new String(txtPassword.getPassword());
+        if (txtUsuario.getText().equals(Usuario) && Pass.equals(Password)) {
+            VentanaPrincipal vp = new VentanaPrincipal();
+            vp.setVisible(true);
+            dispose();
+
+        }
+        else{
+            JOptionPane.showMessageDialog(this, " Usuario o Password incorrecto");
+        
+        }
 
     }//GEN-LAST:event_btnIngresarActionPerformed
 
@@ -173,7 +188,7 @@ public class AccesoLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        if (JOptionPane.showConfirmDialog(this, "¿Desea salir del sistema?", "Acceso", JOptionPane.YES_NO_CANCEL_OPTION) == JOptionPane.YES_OPTION) {
+        if (JOptionPane.showConfirmDialog(null, "¿Desea salir del sistema?", "Acceso", JOptionPane.YES_NO_CANCEL_OPTION) == JOptionPane.YES_OPTION) {
             System.exit(0);
 
         }
@@ -183,6 +198,10 @@ public class AccesoLogin extends javax.swing.JFrame {
         txtUsuario.setText("");
         txtPassword.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -203,4 +222,8 @@ public class AccesoLogin extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
+
+    Conectar objconexion = new Conectar();
+    Connection objconect = objconexion.Conexion();
+
 }

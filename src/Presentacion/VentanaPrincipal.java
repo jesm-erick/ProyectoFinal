@@ -32,20 +32,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuArchi = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        menuMant = new javax.swing.JMenu();
         menuingresoProd = new javax.swing.JMenuItem();
         menuingresoClien = new javax.swing.JMenuItem();
-        menuMovi = new javax.swing.JMenu();
         menuingresoFact = new javax.swing.JMenuItem();
         menuConsultas = new javax.swing.JMenu();
         menuConsultaProd = new javax.swing.JMenuItem();
         menuConsultaClien = new javax.swing.JMenuItem();
         menuConsultaFact = new javax.swing.JMenuItem();
-        menuReportes = new javax.swing.JMenu();
         menuReportesProd = new javax.swing.JMenuItem();
         menuReportesClien = new javax.swing.JMenuItem();
         menuReportesFact = new javax.swing.JMenuItem();
-        menuAdmin = new javax.swing.JMenu();
         menuAdminUser = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,7 +56,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         jdpEscritorioLayout.setVerticalGroup(
             jdpEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 514, Short.MAX_VALUE)
+            .addGap(0, 516, Short.MAX_VALUE)
         );
 
         menuArchi.setText("Archivo");
@@ -172,7 +168,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jdpEscritorio, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jdpEscritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,16 +256,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JDesktopPane jdpEscritorio;
-    private javax.swing.JMenu menuAdmin;
+    public static final javax.swing.JMenu menuAdmin = new javax.swing.JMenu();
     private javax.swing.JMenuItem menuAdminUser;
     private javax.swing.JMenu menuArchi;
     private javax.swing.JMenuItem menuConsultaClien;
     private javax.swing.JMenuItem menuConsultaFact;
     private javax.swing.JMenuItem menuConsultaProd;
     private javax.swing.JMenu menuConsultas;
-    private javax.swing.JMenu menuMant;
-    private javax.swing.JMenu menuMovi;
-    private javax.swing.JMenu menuReportes;
+    public static final javax.swing.JMenu menuMant = new javax.swing.JMenu();
+    public static final javax.swing.JMenu menuMovi = new javax.swing.JMenu();
+    public static final javax.swing.JMenu menuReportes = new javax.swing.JMenu();
     private javax.swing.JMenuItem menuReportesClien;
     private javax.swing.JMenuItem menuReportesFact;
     private javax.swing.JMenuItem menuReportesProd;
